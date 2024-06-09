@@ -15,10 +15,12 @@ for filepath in filepaths:
     filename = Path(filepath).stem
     filename = filename.title()
     pdf.add_page()
+    # adds title
     pdf.set_font(family="times",size=18, style="B")
     pdf.cell(w=50, h=20, txt=filename, ln=1)
+    # adds multiline text
     pdf.set_font(family="times",size=12, style="I")
-    pdf.multi_cell(w=0, h=8, txt=content, border=1)
+    pdf.multi_cell(w=0, h=6, txt=content, border=1)
 
 pdf.output("output.pdf")
 
